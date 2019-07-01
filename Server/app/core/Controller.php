@@ -10,8 +10,13 @@ class Controller
      *  Here described methods for working with the different data (get, post, put, delete)
      * 
     **/
+
+    protected $model;
+    protected $view;
+
     public function parseGetData($input)
     {
+        // print_r($input);
         $pattern = ['/\.txt/','/\.html/','/\.xml/','/\.json/'];
         $input = preg_replace($pattern, '' ,$input);
         $data = explode('/',$input);

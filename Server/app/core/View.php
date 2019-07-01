@@ -4,21 +4,26 @@ namespace app\core;
 
 class View
 {
-    private $result;
+    /**
+     *   
+     *  Core file of View
+     *  Take data and type of view info and show it. View types: xml, txt, json, html (as simple list)
+     * 
+    **/
 
-    function __construct($data, $viewType=VIEW_JSON)
+    public function showResponse($data, $viewType=VIEW_JSON)
     {
         switch (strtolower($viewType))
         {
-            case 'txt':
+            case '.txt':
                 header("Content-Type: text/plain");
                 $this->toText($data);
                 break;
-            case 'html':
+            case '.html':
                 header("Content-Type: text/html");
                 $this->toHtml($data);
                 break;
-            case 'xml':
+            case '.xml':
                 header("Content-Type:text/xml");
                 $this->toXML($data);
                 break;
@@ -88,7 +93,7 @@ class View
 
     private function toXML($data)
     {
-        $xml = new SimpleXMLElement('<elements/>');
+        $xml = new \SimpleXMLElement('<elements/>');
 
         if (is_array($data))
         {
