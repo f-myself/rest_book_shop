@@ -31,7 +31,7 @@ class Route
         // echo $className . "\n";
         // echo $input . "\n";
 
-        $controllerName = 'app\controllers\\' . $className . 'Controller';
+        $controllerName = 'app\controllers\\' . ucfirst($className) . 'Controller';
         $controller = new $controllerName($className);
 
         if (!is_object($controller))

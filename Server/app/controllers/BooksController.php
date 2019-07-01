@@ -24,9 +24,16 @@ class BooksController extends core\Controller
     public function getAction($input)
     {
         $request = $this->parseGetData($input);
-        
-        $result = $this->model->getAllBooks();
-        $this->view->getBooks($result, $input);
+        $id = $request[0];
+        if (is_numeric($id))
+        {
+            $result = $this->model->getBookById($id);
+            $this->view->getBooks($result, $input);
+
+        } else {
+            $result = $this->model->getAllBooks();
+            $this->view->getBooks($result, $input);
+        }
     }
 
     public function postAction()
@@ -43,6 +50,4 @@ class BooksController extends core\Controller
     {
 
     }
-
-
 }
