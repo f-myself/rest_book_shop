@@ -1,5 +1,5 @@
 <?php
-
+header('Allow-Control-Allow-Origin: http://localhost:8080');
 require_once "config.php";
 require_once "Autoloader.php";
 

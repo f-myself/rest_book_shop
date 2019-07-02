@@ -3,13 +3,13 @@
 define('DB_DRV_MYSQL', 'mysql');
 define('DB_DRV_PGSQL', 'pgsql');
 define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'rbs_books_shop');
+// define('DB_USER', 'root');
+// define('DB_PASSWORD', '');
+// define('DB_NAME', 'rbs_books_shop');
 
-// define('DB_USER', 'user6');
-// define('DB_PASSWORD', 'user6');
-// define('DB_NAME', 'user6');
+define('DB_USER', 'user6');
+define('DB_PASSWORD', 'user6');
+define('DB_NAME', 'user6');
 
 
 define('VIEW_TYPE_DEFAULT', '.json');
