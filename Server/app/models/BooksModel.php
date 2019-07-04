@@ -24,12 +24,8 @@ class BooksModel extends core\Model
     public function getAllBooks()
     {
 
-        $allBooks = $this->sql->newQuery()->select(["b.id", "b.title", "b.description", "b.price", "g.genre", "a.author"], true)
+        $allBooks = $this->sql->newQuery()->select(["b.id", "b.title", "b.description", "b.price"], true)
                                           ->from("rbs_books b")
-                                          ->join("rbs_books_genres bg", "bg.book_id=b.id")
-                                          ->join("rbs_genres g", "bg.genre_id=g.id")
-                                          ->join("rbs_books_authors ba", "ba.book_id=b.id")
-                                          ->join("rbs_authors a", "ba.author_id=a.id")
                                           ->doQuery();
         return $allBooks;		
     }
